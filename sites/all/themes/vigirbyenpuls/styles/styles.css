@@ -1,0 +1,764 @@
+/* ----------- OVERSKRIV SYSTEM.CSS --------------------------------------------------*/
+
+ul.links li { /* overskriv /system/system-menus.css */
+	padding: 0;
+	}
+	
+.item-list ul li { /* overskrif system.css (linje 109) */
+	list-style-type: none;
+	margin: 0;
+	}
+
+.form-item { /* system.css?p (linje 117) */
+	margin: 0;
+}
+
+/* ----------- BASIC LAYOUT ----------------------------------------------------------*/	
+
+html {
+	background: #000d2f;
+	}
+
+#outerwrapper {
+	width: 100%;
+	float: left;
+	font-family: Arial, Helvetica, sans-serif;
+	color: #444;
+	background: #fff url(../images/back-graphic-stripes.png) left top repeat-x;
+	font-size: 11px;
+    clear; left;
+	}
+	
+#wrapper {
+	padding-left: 100px;
+	background: url(../images/back-graphic-people.png) left top no-repeat;
+	position: relative;
+	width: 816px;
+	overflow: hidden;
+	min-height: 495px;
+	}
+	
+
+#header {
+	overflow: hidden;
+	margin-bottom: 6px;
+	}	
+	
+	#logo {
+		margin-top: 36px;
+		display: block;
+		float: left;
+		}
+		
+		#logo img {
+			display: block;
+			}
+
+#content {
+	margin-bottom: 65px;
+	overflow: hidden;
+	}
+
+	#main-content {
+		float: left;
+		width: 382px;
+		padding-left: 16px;
+		padding-right: 10px;
+		background: none;
+		margin-left: 204px;
+		}
+	
+	.sidebar-left #main-content,
+	.two-sidebars #main-content {
+		margin-left: 0;	
+		}
+	
+	#sidebar-left, #sidebar-right {
+		width: 176px;
+		padding: 0 14px;
+		float: left;
+		
+		}
+
+#bottom-regions {
+	clear: both;
+	position: relative;
+	}
+
+#bottom-left {
+	width: 393px;
+	float: left;
+	}
+	
+#bottom-right {
+	margin-left: 408px;
+	margin-right: 16px;
+	}
+	
+#footer {
+	margin-top: 20px;
+	padding: 10px 0 0 100px;
+	min-height: 150px;
+	background: #00203f url(../images/back-footer.png) left top repeat-x;
+	color: #fff;
+	}
+	
+	#footer-region {
+		width: 800px;
+		}
+
+/* ----------- Block-view ---------------------------------------------------*/
+
+.block-region {
+	background: #fcf0f8;
+	border: 2px dashed #d4148d;
+	padding: 12px 8px;
+	}
+
+#header-region .block-region {
+	margin: 0 14px 14px 19px;
+	}
+
+
+/* ----------- BASIC FORMATTING ---------------------------------------------------*/
+
+h1 {
+	color: #d60d8c;	
+	font-size: 16px;
+	margin-bottom: 4px;
+	font-weight: bold;
+}
+
+h2 {
+	color: #d60d8c;
+	font-size: 11px;
+	line-height: 15px;
+	font-weight: bold;
+	}
+	
+h3 {
+	font-weight: bold;
+	}
+
+p {
+	font-size: 11px;
+	line-height: 15px;
+	margin-bottom: 10px
+	}
+
+.node strong,
+.field-content strong {
+	font-weight: bold;
+	}
+	
+.node em,
+.field-content em {
+	font-style: italic;
+	}
+
+
+#main-content a:link,
+#main-content a:visited,
+.content a:link,
+.content a:visited {
+	color: #d60d8c;
+	text-decoration: none;
+	}
+	
+	#main-content a:hover,
+	.content a:hover {
+		text-decoration: underline;
+		}
+		
+#footer a:link,
+#footer a:visited {
+	color: #fff;
+	}
+	
+
+
+	
+#blocks {
+	margin: 12px 0;
+	width: 100%;
+	}
+
+#blocks td.region {
+	font-weight: bold;
+	padding: 15px 0 4px;
+	}
+	
+.region-populated {
+	display: none;
+	}
+	
+/* ----------- SEARCH BOX ---------------------------------------------------------*/
+
+#search-box {
+	position: absolute;
+	float: left;
+	right: 16px;
+	top: 10px;
+	}
+	
+	#search-theme-form div {
+		float: left;
+		}
+		
+	#search-theme-form label {
+		font-weight: bold;
+		text-indent: -1000em;
+		float: left;
+		}
+	#search span {
+		float: left;
+		}
+		
+	#edit-search-theme-form-1 {
+		width: 150px;
+		height: 14px;
+		line-height: 14px;
+		padding: 1px 3px;
+		border: none;
+		background: #fff url(../images/back-search-input.png) left top no-repeat;
+		float: left;
+		margin-right: 3px;
+		color: #666;
+		font-size: 10px;
+		}
+		
+	#edit-submit {
+		vertical-align: bottom; 
+		}
+		
+
+	
+			
+/* ----------- MAIN MENU ----------------------------------------------------------*/			
+.main-menu {
+	margin-top: 94px;
+	margin-right: 16px;
+	margin-left: 260px;
+}
+
+	.main-menu li {
+		float: left;
+		}
+		
+	.main-menu a {
+		display: block;
+		height: 43px;
+		line-height: 43px;
+		font-weight: bold;
+		text-indent: -1000em;
+	}
+
+	.main-menu a:link, .main-menu a:visited {
+			text-decoration: none;
+			color: #fff;
+			font-size: 17px;
+			font-family: Arial Narrow, sans-serif;
+		}
+
+	.main-menu .menu-424 a:link, .main-menu .menu-424 a:visited {
+		font-size: 15.5px;
+		}
+	
+	.main-menu a:hover {
+		color: #002b54;
+		}
+	
+	a.menu-427 { /* Århus Kommune logo */
+		float: right;	
+		width: 45px;
+		height: 43px;
+		line-height: 43px;
+		background: url(../images/icon-byvaaben.png) left top no-repeat;
+		margin-right: 14px; 
+		text-indent: -1000px;
+	}
+	
+	.menu-426 a { /* By i bevægelse */
+		width: 121px;
+		background: url(../images/back-menu-sprite.png) -311px 0px no-repeat; 
+	}
+
+	.menu-426 a:hover,
+	.menu-426.active-trail a {
+		background-position: -311px -43px; 
+		}
+		
+	.menu-425 a { /* Events */
+		width: 68px;
+		background: url(../images/back-menu-sprite.png) no-repeat -243px 0px ;
+	}
+
+	.menu-425 a:hover,
+	.menu-425.active-trail a {
+		background-position: -243px -43px; 
+		}
+		
+	.menu-380 a { /* Nyheder */
+		width: 84px;
+		background: url(../images/back-menu-sprite.png) -432px 0px no-repeat;
+	}
+	
+	.menu-380 a:hover,
+	.menu-380.active-trail a {
+		background-position: -432px -43px;  
+		}
+	 
+	.menu-424 a { /* Århus Kommunes Idrætscentre */
+		width: 243px;
+		background: url(../images/back-menu-sprite.png) 0px 0px no-repeat;		
+	}
+	
+	.menu-424 a:hover,
+	.menu-424.active-trail a {
+		background-position: 0px -43px;
+		}
+	
+/* ----------- SECONDARY MENU -----------------------------------------------------*/	
+.secondary-menu {
+	float: left;
+	position: absolute;
+	background-color: transparent; /* #000d2f; */
+	color: #fff;
+	top: 46px;
+	right: 16px;
+	}
+	
+		ul.secondary-menu li {
+			float: left;
+			padding: 0px 6px;
+			border-right: 1px solid #fff;
+			}
+			
+		.secondary-menu li.last {
+			padding-right: 0;
+			border: none;
+			}
+			
+		.secondary-menu a:link,
+		.secondary-menu a:visited {
+			color: #fff;
+			text-decoration: none;
+			}
+			
+		.secondary-menu a:hover,
+		.secondary-menu a:active {
+			text-decoration: underline;
+			}
+			
+
+/* ----------- SIDEBAR:MENU ------------------------------------------------------*/	
+
+.block-menu_block a:link, .block-menu_block a:visited {
+	text-decoration: none;
+	}
+	
+.block-menu_block a:hover, .block-menu_block a:active {
+	text-decoration: underline;
+	}
+	
+.block-menu_block .content {
+	margin-top: 19px;
+	}
+	
+.block-menu_block li {
+	padding-left: 0;
+	font-weight: bold;
+	color: #666;
+	}
+	
+	.block-menu_block li a:link,
+	.block-menu_block li a:visited {
+		color: #444;
+		}
+	
+	.block-menu_block li li {
+		padding-left: 13px;
+		font-weight: normal;
+		color: #6f6f6f;
+		background: url(../images/icon-bullet-arrow-pink.png) 2px 3px no-repeat;
+		}
+
+		.block-menu_block li li a:link,
+		.block-menu_block li li a:visited {
+			color: #6f6f6f;
+			}
+		
+	.block-menu_block li li.expanded {
+		background: url(../images/icon-bullet-arrow-pink-expanded.png) 0 2px no-repeat;
+		}
+		
+		.block-menu_block .content li li li {
+			background: url(../images/icon-bullet-line-grey.png) 1px 6px no-repeat;
+			padding-left: 9px;
+			}
+
+			.block-menu_block li li li a:link,
+			.block-menu_block li li li a:visited {
+				color: #999;
+				}
+
+.block-menu_block li.active>a:link,
+.block-menu_block li.active>a:visited,
+.block-menu_block li.active>a:hover,
+.block-menu_block li.active>a:active,
+.block-menu_block li.active>span>a:link,
+.block-menu_block li.active>span>a:visited,
+.block-menu_block li.active>span>a:hover,
+.block-menu_block li.active>span>a:active {
+	color: #d60d8c;	
+	}
+	
+#block-menu_block-3 li {
+	margin-bottom: 16px;
+	}	
+
+#block-menu_block-3 li li {
+	margin-bottom: 0;
+	}
+
+
+/* ----------- SITEMAP ------------------------------------------------------------*/
+#block-menu_block-2 .menu li {
+	padding-left: 0;
+	font-weight: bold;
+	color: #D60D8C
+	}
+	
+	#block-menu_block-2 .menu li>ul {
+		padding-bottom: 17px;
+		}	
+	
+	#block-menu_block-2 .menu li li {
+		color: #444;
+		background: none;
+		}
+
+		#block-menu_block-2 .menu li li a:link,
+		#block-menu_block-2 .menu li li a:visited {
+			color: #444;
+			}
+			
+		#block-menu_block-2 .menu li li>ul {
+			padding-bottom: 8px;
+			}
+			
+	#block-menu_block-2 .menu li li li {
+		font-weight: normal;
+		background: url(../images/icon-bullet-arrow-pink.png) 2px 3px no-repeat;
+		padding-left: 13px;
+		}
+
+	
+	
+/* ----------- HEADER BLOCKS ------------------------------------------------------*/	
+
+#header-region {
+	overflow: hidden;
+	margin: 0 0 2px -5px;
+	height: 207px;
+	}
+
+#header-region .block {
+	float: left;
+	}
+	
+#header-region .header-small {
+	padding-bottom: 46px;
+	background: url(../images/back-header-shadow-204.jpg) left bottom no-repeat;
+	}
+	
+	
+/* ----------- GRAPHICAL HEADERS -------------------------------------------------*/	
+
+#header-graphic {
+	min-height: 209px;
+	overflow: hidden;
+	position: relative;
+	width: 815px;
+	}
+
+	#header-graphic .caption {
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 825px;
+		height: 99px;
+		background: url(../images/header-grafik-ramme-title.png) -2px -10px no-repeat;
+		padding: 110px 9px 0 6px;
+		}
+		
+	#header-graphic .caption span {
+		display: block;
+		margin-left: 228px;
+		font-size: 18px;
+		}
+
+/* Nyhedssiden, søgesider */
+.nyheder #content,
+.search #content {
+	padding-top: 209px;
+	padding-left: 5px;
+	margin-left: -5px;
+	}
+
+.nyheder #content,
+.tax-nyheder #content {
+	background: url(../images/header-nyheder.jpg) left top no-repeat;
+	}
+	
+.search #content {	
+	background: url(../images/header-search.jpg) left top no-repeat;
+}
+
+/* ----------- MAIN CONTENT ------------------------------------------------------*/		
+
+#page-title {
+	margin-bottom: 19px;
+	}
+
+.field-field-siteurl a { /* Style url over content på sider, der bruger det */
+	font-weight: bold;
+	color: #666;
+	padding-left: 18px;
+	line-height: 16px;
+	margin-bottom: 19px;
+	display: block;
+	background: url(../images/icon-link-arrow-large.png) 0% 50% no-repeat;
+	margin-top: -14px;
+	}
+	
+.node ol,
+.node ul {
+	list-style-position: outside;
+	margin-left: 20px;
+	margin-bottom: 15px;
+	}
+
+.node ol li,
+.field-content ol li {
+	color: #d60d8c;
+	list-style-type: lower-latin;
+	list-style-position: outside;
+	margin-bottom: 2px;
+	font-size: 11px;
+	line-height: 15px;
+	margin-bottom: 5px;
+	}
+	
+.node ul li,
+.field-content ul li {
+	list-style-image: url(../images/icon-bullet-arrow-pink.png);
+	font-size: 11px;
+	line-height: 15px;
+	list-style-position: outside;
+	margin-bottom: 2px;
+	}
+	
+	#node-form ul li {
+		list-style: square;
+		}
+
+
+img {
+	display: block;
+	}
+
+
+/* Søgesiden */
+
+.search-results {
+	margin-top: 15px;
+	}
+
+	.search-results .title a {	
+		font-weight: bold;
+		text-decoration: none;
+	}
+	
+	.search-results .search-info {
+		display: none;
+		}
+		
+	.search-results dd {	
+		margin-bottom: 15px;
+		padding-bottom: 5px;
+		border-bottom: 1px solid #eee;
+		}
+
+body.search #search-form {
+	margin-bottom: 30px;
+	}
+	
+body.search #main-content h2 {
+	font-size: 16px;
+	
+	}
+
+
+/* ----------- Views ------------------------------------------------------*/
+
+.views-field-title { /* Bold titler i views-oversigter */
+	font-weight: bold;
+	}
+	
+	.views-field-title a:link, .views-field-title a:visited { /* Giv linkede titler, fx nyhedssiden, pink farve */
+		text-decoration: none;
+		color: #d60d8c;	
+		}
+
+
+	#sidebar-right .views-field-title a:link,
+	#sidebar-right .views-field-title a:visited { /* Anden farve til nyheder i sidebaren.  */
+		color: #333; 
+		}
+	
+		
+	.views-field-title a:hover, .views-field-title a:active {
+		text-decoration: underline;
+		}
+		
+	#sidebar-right .views-row {
+		margin-bottom: 30px;
+		}
+		
+#block-views-news_list-block_1 h2 { /* Seneste nyheder i højre side */
+	margin-bottom: 15px;
+	}
+
+		
+.view-display-id-page_1 .item-list li { /* News-list: Nyhedssiden */
+	padding: 0 0 15px;
+	margin-top: 15px;
+	overflow: hidden;
+	border-bottom: 1px solid #d1d1d1;
+	}
+	
+	#block-views-news_list-block_2 .item-list li { /* Nyhedsarkiv i venstre side */
+		background: url(../images/icon-bullet-arrow-pink.png) 0% 50% no-repeat;
+		padding-left: 12px;
+		}	
+		
+		#block-views-news_list-block_2 .item-list li a:link, 	/* Nyhedsarkiv i venstre side */
+		#block-views-news_list-block_2 .item-list li a:visited {
+			text-decoration: none;
+			color: #444;
+			line-height: 15px;
+			}
+			
+		#block-views-news_list-block_2 .item-list li a:hover, 	/* Nyhedsarkiv i venstre side */
+		#block-views-news_list-block_2 .item-list li a:active {
+			text-decoration: underline;
+			}
+			
+/* Nyhedsoversigter - ryk link-pilen op på linie under summary */
+
+
+.view-id-news_list .views-field-field-summary-value,
+.view-id-news_list .views-field-field-summary-value .field-content,
+.view-id-news_list .views-field-view-node,
+.view-id-news_list .views-field-view-node {
+	display: inline;
+	}
+
+.view-id-news_list .views-field-view-node a { /* Læs mere link udskiftet med pil-ikon for nyheds-listerne */
+	text-indent: -1000em;
+	background: url(../images/icon-link-arrow.png) left top no-repeat;
+	width: 12px;
+	height: 11px;
+	overflow: hidden;
+	display: inline-block;
+	vertical-align:bottom;
+	}
+
+			
+
+/* Systembeskeder */
+.messages, .preview, .help {
+	margin:0.75em 0;
+	padding:0.5em 1em;
+	}
+
+.messages {
+	background-color:#FFFFFF;
+	border:1px solid #B8D3E5;
+	}
+
+.messages, .help {
+	background-position:10px 13px;
+	background-repeat:no-repeat;
+	min-height:37px;
+	padding-left:44px;
+	padding-top:10px;
+	}
+	
+div.status {
+	border-color:#C7F2C8;
+	color:#33A333;
+	}
+
+.messages.status {
+	background-image:url(../icons/status/status-info.png);
+	}
+	
+.view-display-id-block_2 .item-list ul li {
+	text-transform: capitalize;
+	}	
+
+/* ------------------------ IMG ASSIST UPLOAD ------------------- */
+
+body.img_assist {
+	background: #fff;
+}
+
+/* ------------------------ Edit form ------------------- */
+
+.node-form {
+	font-size: 12px;
+	line-height: 15px;
+	}
+
+.node-form .form-item,
+.node-form .body-field-wrapper,
+.node-form .link-field-subrow,
+.node-form .menu-item-form,
+.node-form fieldset {
+	margin-bottom: 8px;
+	padding: 8px;
+	border: 1px solid #ccc;
+	background: #e8e8e8;
+	}
+	
+	.node-form fieldset.collapsed {
+		background-color: transparent;
+		}
+
+.node-form .form-radios .form-item,
+.node-form .body-field-wrapper .form-item,
+.node-form .link-field-subrow .form-item,
+.node-form .menu-item-form .form-item,
+.node-form fieldset .form-item {
+	margin-bottom: 0 0 2px;
+	padding: 0;
+	border: none;
+	}
+	
+.node-form .body-field-wrapper fieldset {
+	margin: 0;
+	padding: 0 0 0 8px;
+	border: none;
+	}
+	
+.node-form .form-item label {
+	font-size: 14px;
+	margin-bottom: 8px;
+	}
+	
+.node-form .form-item label.option {
+	font-size: 12px;
+	margin: 0;
+	}

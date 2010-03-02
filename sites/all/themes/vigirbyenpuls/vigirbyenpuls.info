@@ -1,0 +1,40 @@
+; $Id: vigirbyenpuls.info,v 0.1.0.0 2009/06/30 20:41:00 woeldiche Exp $
+
+name = Vigirbyenpuls Theme
+description = Tema til www.vigirbyenpuls.dk. Designet af Underdogs, kodet af Jesper W&oslash;ldiche, IT og Kommunikation.
+screenshot = images/screenshot.png
+core = 6.x
+engine = phptemplate
+
+;--------------------- styles ------------------------------
+stylesheets[all][] = styles/reset.css
+stylesheets[all][] = styles/styles.css
+stylesheets[all][] = styles/sifr.css 
+
+;------------ IE Conditional Stylesheets -------------------
+conditional-stylesheets[if lt IE 7][all][] = styles/ie/msie6.css
+
+;--------------------- scripts -----------------------------
+;scripts[] = js/aria-roles.js
+scripts[] = js/sifr.js
+scripts[] = js/sifr-config.js
+;scripts[] = js/sifr-debug.js
+
+;--------------------- features ----------------------------
+features[] = logo
+features[] = search
+features[] = favicon
+features[] = primary_links
+features[] = secondary_links
+
+;--------------------- regions -----------------------------
+regions[header]         = Graphical Header
+regions[content_top]    = Content Top
+regions[content_bottom] = Content Bottom
+regions[bottom_left]    = Bottom Left
+regions[bottom_right]   = Bottom Right
+regions[left]           = Left Sidebar
+regions[right]          = Right Sidebar
+regions[footer]         = Footer
+
+

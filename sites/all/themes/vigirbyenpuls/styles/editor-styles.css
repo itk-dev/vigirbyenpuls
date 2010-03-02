@@ -1,0 +1,57 @@
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	color: #444;
+	background: #fff;
+	font-size: 11px;
+	}
+
+
+/* ----------- BASIC FORMATTING ---------------------------------------------------*/
+
+h1 {
+	color: #d60d8c;	
+	font-size: 16px;
+	margin-bottom: 4px;
+}
+
+h2 {
+	color: #d60d8c;
+	font-size: 11px;
+	margin-bottom: 2px;
+	}
+	
+h3 {
+	color: #444;
+	font-size: 11px;
+	margin-bottom: 2px;
+	font-weight: bold;
+	}
+
+p, ol, ul {
+	font-size: 11px;
+	line-height: 15px;
+	margin-bottom: 15px
+	}
+
+/* Kopieres over i styles.css med #main-content foran */
+
+ol {
+	list-style-position: outside;
+	list-style-type: lower-latin;
+	padding-left: 12px;
+	}
+	
+ul {
+	list-style-position: outside;
+	list-style-type: square;
+	padding-left: 12px;
+	}
+	
+li {
+	margin-bottom: 2px;
+	}	
+
+img {
+	display: block;
+	}
+

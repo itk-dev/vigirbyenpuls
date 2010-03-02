@@ -1,0 +1,91 @@
+#header-region {
+	clear: left;
+	padding-top: 6px;
+	}
+	
+#main-content {
+	display: inline; /* FIX: Double margin float bug */
+	}
+	
+#sidebar-left {
+	overflow: hidden;
+	}
+	
+#content {
+	float: left;
+	display: inline;
+	clear: left;
+	width: 100%;
+	}
+	
+	#header .menu-427 a { /* Århus Kommune logo */
+		background-position: left top;
+	}
+	
+	#header .menu-426 a { /* By i bevægelse */
+		background-position: -311px 0px;
+	}
+
+	#header .menu-426 a:hover,
+	#header .menu-426 a.active 	 {
+		background-position: -311px -43px;
+		}
+		
+	#header .menu-425 a { /* Events */
+		background-position: -243px 0px ;
+	}
+
+	#header .menu-425 a:hover,
+	#header .menu-425 a.active {
+		background-position: -243px -43px;
+		}
+		
+	#header .menu-380 a { /* Nyheder */
+		background-position: -432px 0px;
+	}
+	
+	#header .menu-380 a:hover,
+	#header .menu-380 a.active {
+		background-position: -432px -43px;
+		}
+	 
+	#header .menu-424 a { /* Århus Kommunes Idrætscentre */ 
+		background-position: 0px 0px;		
+	}
+	
+	#header .menu-424 a:hover,
+	#header .menu-424 a.active {
+		background-position: 0px -43px;
+		}
+  
+#bottom-left {
+    float: left;
+    display: inline;
+    position: relative;
+    z-index: 1000;    
+    }
+        
+#footer {
+	height: 150px;
+	}
+	
+/* Maintenance styles */
+
+.in-maintenance #wrapper {
+	height: 495px;
+	}
+
+.in-maintenance #header {
+	height: 176px;
+	}
+
+
+.in-maintenance #content {
+	clear: left;
+	}
+	
+/* Debugging styles */
+
+.node {
+	width: 99%;
+	}
