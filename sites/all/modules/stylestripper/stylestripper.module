@@ -1,6 +1,6 @@
 <?php
 
-// $Id: 
+// $Id$
 
 /**
  * Implementation of hook_help().
@@ -20,7 +20,8 @@ function stylestripper_help($path, $arg) {
   if (in_array($path, $theme_paths)) {
     if (variable_get('stylestripper_enable_mode', 0)) {
       return t('Check the CSS files that shoule be enabled in the theme.');
-    } else {
+    }
+    else {
       return t('Check the CSS files that shoule be disabled in the theme.');
     }
   }
@@ -175,10 +176,11 @@ function _stylestripper_admin_search_form_submit($form, &$form_state) {
       $module_path = pathinfo($module->filename, PATHINFO_DIRNAME);      
       $css_files = file_scan_directory($module_path, '\.css$', array('.', '..', '.svn',  'CVS'));
       foreach((array)$css_files as $key => $file) {
-        $fid = db_query("SELECT fid FROM {stylestripper} WHERE module_name = '%s' AND css_filename = '%s'", $module->name, $file->filename);      
+        $fid = db_result(db_query("SELECT fid FROM {stylestripper} WHERE module_name = '%s' AND css_filename = '%s'", $module->name, $file->filename));
         if (is_numeric($fid)) {
           db_query("UPDATE {stylestripper} SET updated = 1 WHERE fid = %d", $fid);
-        } else {
+        }
+        else {
           db_query("INSERT INTO {stylestripper} (module_name, css_filename, updated) VALUES ('%s', '%s', 1)", $module->name, $file->filename);  
         }
       }
@@ -287,9 +289,10 @@ function theme_stylestripper_admin_theme_settings($form) {
 * @return string
 */
 function stylestripper_admin_theme_settings_submit($form, &$form_state) {
-  $theme = db_result(db_query("SELECT name FROM {system} WHERE type = 'theme' AND name = '%s' AND status = 1", arg(4)));
+  $theme_name = (arg(1) == 'themes') ? arg(3) : arg(4);
+  $theme = db_result(db_query("SELECT name FROM {system} WHERE type = 'theme' AND name = '%s' AND status = 1", $theme_name));
   if (empty($theme)) {
-    drupal_set_message(t('Theme does not exists!'), 'error');
+    drupal_set_message(t('Theme %theme_name does not exist!', array('!theme_name' => $theme_name)), 'error');
     return '';
   }
   
@@ -304,7 +307,7 @@ function stylestripper_admin_theme_settings_submit($form, &$form_state) {
     db_query("INSERT INTO {stylestripper_settings} (fid, theme, status) VALUES (%d, '%s', %d)", $fid, $theme, ($status > 0) ? 1 : 0);
   }
   
-  drupal_set_message(t('The style stripper settings for "!theme" is now updated!', array('!theme' => $theme)));
+  drupal_set_message(t('The style stripper settings for %theme_name is now updated!', array('%theme_name' => $theme)));
   return;  
 }
 

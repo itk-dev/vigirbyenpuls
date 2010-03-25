@@ -15,9 +15,9 @@ stylesheets[all][] = styles/framework/debug.css
 ; Theme specific styles. Any sub-themes should override this.
 stylesheets[all][] = styles/styles.css
 
-; Information added by drupal.org packaging script on 2009-06-21
-version = "6.x-1.x-dev"
+; Information added by drupal.org packaging script on 2009-08-02
+version = "6.x-1.0"
 core = "6.x"
 project = "ninesixty"
-datestamp = "1245543469"
+datestamp = "1249223138"
 
