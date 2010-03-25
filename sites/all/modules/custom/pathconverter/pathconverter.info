@@ -1,0 +1,7 @@
+; $Id$
+name = Path Converter (PC)
+description = Defines actions that can convert links to path filter compatible paths
+package = ITK
+core = 6.x
+dependencies[] = pathfilter
+dependencies[] = trigger

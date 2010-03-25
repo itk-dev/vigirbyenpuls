@@ -1,0 +1,136 @@
+<?php
+
+// $Id$
+
+/**
+ * @file
+ * This module takes full paths and transforms them into relative parts
+ * if they are part of the current domain. This is done by hooking into
+ * the the action API.
+ */
+
+/**
+ * Escape url
+ *
+ * @param String url
+ *      The URL to escape
+ */
+function _pathconverter_escape_url($url)
+{
+  $url = str_replace('/', '\\/', $url);
+  $url = str_replace('.', '\.', $url);
+  return $url;
+}
+
+/**
+ * Looks up the {url_alias} table and tries to find an
+ * node URL for an alias
+ *
+ * @param string $url
+ *      The url that should be lookup in the alias table
+ */
+function _pathconverter_find_alias($url)
+{
+  $sql = "SELECT src FROM {url_alias} WHERE dst = '%s'";
+  $node_path = db_result(db_query($sql, $url));
+  if ($node_path != '')
+  {
+    // It was an alias, so update the path with the node
+    return $node_path;
+  }
+    
+  // No alias found
+  return $url;
+}
+
+/**
+ * Logic for converting urls
+ *
+ * @param String $text
+ *      The text to search and convert URLs in
+ */
+function _pathconverter_convert(&$text)
+{
+  // Get current language
+  global $language;
+	
+  // Get base url and make it regx friendly
+  global $base_url;
+  $base = _pathconverter_escape_url($base_url);
+    
+  // Pattern to detect absolute urls
+  if ($language->prefix != '')
+  {
+    $abs_pattern = '/href=\"'.$base.'\/'.$language->prefix.'\/(.+?)\"/im';
+  }
+  else
+  {
+    $abs_pattern = '/href=\"'.$base.'\/(.+?)\"/im';
+  }
+  
+  // Find all absolute paths
+  preg_match_all($abs_pattern, $text, $matches, PREG_PATTERN_ORDER);
+  for ($i = 0; count($matches[0]) > $i; $i++)
+  {
+    // Detect if this is an alias
+    $relative = _pathconverter_find_alias($matches[1][$i]);
+
+    // Replace the path
+    $val = _pathconverter_escape_url($matches[0][$i]);
+    $text = preg_replace("/".$val."/", "href=\"internal:".$relative."\\1\"", $text);
+  }
+  
+  // Pattern to find internal alias
+  $rel_pattern = "/href=\"(?!internal:)\/?(.+?)\"/im";
+  
+  // Find all relative paths
+  preg_match_all($rel_pattern, $text, $matches, PREG_PATTERN_ORDER);
+  for ($i = 0; count($matches[0]) > $i; $i++)
+  {
+    // Find alias if one exists
+    $relative = _pathconverter_find_alias($matches[1][$i]);
+        
+    // Replace the path
+    if (strcmp($val, $relative))
+    {
+      $val = _pathconverter_escape_url($matches[0][$i]);
+      $text = preg_replace("/".$val."/", "href=\"internal:".$relative."\\1\"", $text);
+    }
+  }
+}
+
+/**
+ * Action to trigger when node is saved or updated
+ */
+function pathconverter_action($object, $context)
+{
+  switch ( $context['hook'] ) {
+    case nodeapi:
+      $node = $context['node'];
+      _pathconverter_convert($node->body);
+      _pathconverter_convert($node->teaser);
+	  break;
+		
+	default:
+	  break;
+  }
+}
+
+/**
+ * Implementation of hook_action_info
+ */
+function pathconverter_action_info()
+{
+  $info['pathconverter_action'] = array(
+  	'type' => 'node',
+    'description' => t('Convert links into path filter links (internal:xxxxx)'),
+    'configurable' => FALSE,
+    'hooks' => array(
+      'nodeapi' => array('presave'),
+     ),
+  );
+  
+  return  $info;
+}
+
+?>
