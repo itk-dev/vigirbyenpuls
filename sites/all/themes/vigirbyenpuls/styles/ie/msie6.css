@@ -17,7 +17,11 @@
 	clear: left;
 	width: 100%;
 	}
-	
+
+#header {
+  height: 176px;
+}	
+
 	#header .menu-427 a { /* Århus Kommune logo */
 		background-position: left top;
 	}
@@ -58,12 +62,26 @@
 		background-position: 0px -43px;
 		}
   
+#header-region {
+  height: 200px;
+  overflow: hidden;
+}
+
+  #header-graphic {
+    position: static;
+  }  
+  
 #bottom-left {
     float: left;
     display: inline;
     position: relative;
     z-index: 1000;    
     }
+    
+#bottom-right {
+  width: 393px;
+  margin-left: 12px;
+}
         
 #footer {
 	height: 150px;

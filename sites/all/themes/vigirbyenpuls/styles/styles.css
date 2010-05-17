@@ -478,11 +478,11 @@ p {
 #header-graphic {
 	min-height: 209px;
 	overflow: hidden;
-	position: relative;
 	width: 815px;
+	position: static;
 	}
 
-	#header-graphic .caption {
+/*	#header-graphic .caption {
 		position: absolute;
 		left: 0;
 		top: 0;
@@ -497,6 +497,7 @@ p {
 		margin-left: 228px;
 		font-size: 18px;
 		}
+*/
 
 /* Nyhedssiden, søgesider */
 .nyheder #content,
