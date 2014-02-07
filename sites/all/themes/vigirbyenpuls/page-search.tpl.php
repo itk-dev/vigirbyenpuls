@@ -25,7 +25,7 @@
       
     <?php if ($main_menu_links): ?>
         <?php print $main_menu_links; ?>
-        <a class="menu-427" target="_blank" href="http://www.aarhuskommune.dk">Århus Kommune</a>
+        <a class="menu-427" target="_blank" href="http://www.aarhuskommune.dk">Aarhus Kommune</a>
     <?php endif; ?>
     
     <?php if ($secondary_menu_links): ?>
